@@ -16,3 +16,9 @@ collections:
     slug: "{{slug}}"
     fields:
       - { name: "title", label: "Title", widget: "string" }
+      - { name: "description", label: "Description", widget: "string" }
+      - { name: "author", label: "Author", widget: "string" }
+      - { name: "date", label: "Date", widget: "datetime" }
+      - { name: "category", label: "Category", widget: "string" }
+      - { name: "image", label: "Image", widget: "image" }
+      - { name: "featured", label: "Featured", widget: "boolean" }
