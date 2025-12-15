@@ -3,7 +3,7 @@ import { netlifyData } from "./netlify";
 import { sanityData } from "./sanity";
 
 let cms;
-const cmsName = "dummy";
+const cmsName = process.env.CMS_NAME;
 
 if (cmsName === "sanity") {
   cms = sanityData;

@@ -14,7 +14,7 @@ export default function FeaturedList({ items }) {
         <div className="mx-auto">
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {items.map((a) => (
-              <ArticleCard key={a.id} article={a} />
+              <ArticleCard key={a.slug} article={a} />
             ))}
           </div>
         </div>

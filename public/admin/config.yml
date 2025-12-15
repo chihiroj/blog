@@ -13,7 +13,6 @@ collections:
     label: "Articles"
     folder: "/public/content/articles"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: "{{slug}}"
     fields:
-      - { name: "layout", label: "Layout", widget: "hidden", default: "articles" }
       - { name: "title", label: "Title", widget: "string" }

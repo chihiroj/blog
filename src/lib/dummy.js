@@ -2,7 +2,7 @@ export const dummyData = {
   async getAllArticles() {
     return [
       {
-        id: "1",
+        slug: "sample-article-1",
         title: "Sample Article 1",
         description: "Short description for article one.",
         author: "John Doe",
@@ -12,7 +12,7 @@ export const dummyData = {
         featured: true
       },
       {
-        id: "2",
+        slug: "sample-article-2",
         title: "Sample Article 2",
         description: "Short description for article two.",
         author: "Jane Doe",
@@ -22,7 +22,7 @@ export const dummyData = {
         featured: true
       },
       {
-        id: "3",
+        slug: "sample-article-3",
         title: "Sample Article 3",
         description: "Short description for article three.",
         author: "Mark Smith",
@@ -37,7 +37,7 @@ export const dummyData = {
   async getFeaturedArticles() {
     return [
       {
-        id: "1",
+        slug: "sample-article-1",
         title: "Sample Article 1",
         description: "Short description for article one.",
         author: "John Doe",
@@ -47,7 +47,7 @@ export const dummyData = {
         featured: true
       },
       {
-        id: "2",
+        slug: "sample-article-2",
         title: "Sample Article 2",
         description: "Short description for article two.",
         author: "Jane Doe",
@@ -59,9 +59,9 @@ export const dummyData = {
     ];
   },
 
-  async getArticle(id) {
+  async getArticle(slug) {
     const all = await this.getAllArticles()
-    return all.find(a => a.id === id)
+    return all.find(a => a.slug === slug)
   },
 
   async login() {

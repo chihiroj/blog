@@ -30,7 +30,7 @@ export default function ArticleCard({ article }) {
 
         <div className="flex justify-end">
           <Button asChild variant="ghost" size="sm">
-            <Link href={`/articles/${article.id}`}>Read more</Link>
+            <Link href={`/articles/${article.slug}`}>Read more</Link>
           </Button>
         </div>
       </CardContent>
