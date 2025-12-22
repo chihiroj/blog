@@ -1,6 +1,6 @@
 import { dummyData } from "./dummy";
-import { netlifyData } from "./netlify";
-import { sanityData } from "./sanity";
+import * as netlifyData from "./netlify";
+import * as sanityData from "./sanity";
 
 let cms;
 const cmsName = process.env.CMS_NAME;

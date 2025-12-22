@@ -38,7 +38,7 @@ export default function ArticleView({ article }) {
         <p
           className="mb-10 text-lg leading-relaxed text-muted-foreground whitespace-pre-line break-words"
         >
-          {article.body}
+          {article.description}
         </p>
       </div>
     </div>

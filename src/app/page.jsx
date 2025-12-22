@@ -7,6 +7,8 @@ export default async function HomePage() {
   const featured = await cms.getFeaturedArticles();
   const allArticles = await cms.getAllArticles();
 
+  console.log(allArticles);
+
   return (
     <div>
       <Navbar />
