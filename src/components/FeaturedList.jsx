@@ -12,7 +12,7 @@ export default function FeaturedList({ items }) {
         </h2>
 
         <div className="mx-auto">
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div id="featuredGrid" className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {items.map((a) => (
               <ArticleCard key={a.slug} article={a} />
             ))}

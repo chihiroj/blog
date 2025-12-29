@@ -26,9 +26,10 @@ export default function Navbar() {
   }, [])
 
   const handleSearch = async () => {
-    const cmsResult = await cms.search(query)
-    setResults(cmsResult)
-    setShowDropdown(true)
+    const cmsResult = await cms.search(query);
+    console.log(cmsResult);
+    setResults(cmsResult);
+    setShowDropdown(true);
   }
 
   return (
@@ -44,6 +45,7 @@ export default function Navbar() {
           <Button onClick={() => cms.login()} variant="ghost">Login</Button>
 
           <Input
+            id="searchbar"
             placeholder="Search..."
             value={query}
             className="rounded-r-none"
@@ -66,15 +68,16 @@ export default function Navbar() {
 
           {showDropdown && results.length > 0 && (
             <div
+              id="searchDropdown"
               className="absolute left-0 top-full z-50 mt-2 w-full overflow-hidden rounded-md border border-gray-200 bg-white shadow-md"
             >
-              {results.map((r) => (
+              {results.map((result) => (
                 <Link
-                  key={r.id}
-                  href={`/articles/${r.id}`}
+                  key={result.slug}
+                  href={`/articles/${result.slug}`}
                   className="block border-b border-gray-100 px-3 py-2 text-sm hover:bg-gray-100"
                 >
-                  {r.title}
+                  {result.title}
                 </Link>
               ))}
             </div>

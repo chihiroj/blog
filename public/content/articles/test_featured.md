@@ -1,5 +1,5 @@
 ---
-title: test
+title: test_featured
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
   a augue vel ante hendrerit consectetur in ultricies lorem. Proin euismod
   tellus ut ex iaculis sagittis. Vestibulum luctus nisl a finibus faucibus.
@@ -10,13 +10,13 @@ description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
   eu diam dignissim, et maximus dui scelerisque. Curabitur tincidunt tortor
   velit, sed consequat ex scelerisque sed. Cras diam lorem, volutpat ac mattis
   a, suscipit placerat ipsum. Ut pellentesque elit a ultricies finibus.
-author: test
-date: 2025-12-18T23:23:00.000+01:00
+author: chihiro
+date: 2025-12-19T23:23:00.000+01:00
 category:
   - animal
-  - life
 categories:
+  - animal
   - life
 image: /uploads/sketch.png
-featured: false
+featured: true
 ---

@@ -33,32 +33,11 @@ export async function getAllArticles() {
 };
 
 export async function getFeaturedArticles() {
-  const articlesDirectory = path.join(process.cwd(), "public/content/articles");
-
-  const fileNames = fs.readdirSync(articlesDirectory);
-
-  const allArticlesData = fileNames.map((fileName) => {
-    const slug = fileName.replace(/\.md$/, "");
-
-    const fullPath = path.join(articlesDirectory, fileName);
-    const fileContents = fs.readFileSync(fullPath, "utf8");
-
-    const { data } = matter(fileContents);
-
-    return {
-      slug,
-      ...data,
-      date: data.date instanceof Date ? data.date.toISOString() : data.date,
-    };
-  });
+  const allArticlesData = await getAllArticles();
 
   const featuredArticles = allArticlesData.filter(article => article.featured === true);
 
-  const sortedArticles = featuredArticles.sort((a, b) =>
-    a.date < b.date ? 1 : -1
-  );
-
-  return sortedArticles;
+  return featuredArticles;
 };
 
 export async function getArticle(slug) {
@@ -88,7 +67,25 @@ export async function login() {
 }
 
 export async function search(query) {
-  return [
+  const articlesDirectory = path.join(process.cwd(), "public/content/articles");
 
-  ];
+  const fileNames = fs.readdirSync(articlesDirectory);
+
+  const allArticles = fileNames.map((fileName) => {
+    const slug = fileName.replace(/\.md$/, "");
+
+    const fullPath = path.join(articlesDirectory, fileName);
+    const fileContents = fs.readFileSync(fullPath, "utf8");
+
+    const { data } = matter(fileContents);
+
+    return {
+      slug,
+      title: data.title
+    };
+  });
+
+  const matchingArticles = allArticles.filter(article => article.title.includes(query));
+
+  return matchingArticles;
 }

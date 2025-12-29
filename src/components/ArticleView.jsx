@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
+import { Badge } from "./ui/badge"
 
 export default function ArticleView({ article }) {
   const router = useRouter()
@@ -18,7 +19,7 @@ export default function ArticleView({ article }) {
         />
 
         <div className="absolute bottom-0 left-0 w-full bg-black/60 px-8 py-6 text-white">
-          <h1 className="text-xl font-bold md:text-2xl">{article.title}</h1>
+          <h1 id="articleTitle" className="text-xl font-bold md:text-2xl">{article.title}</h1>
         </div>
       </div>
 
@@ -31,11 +32,20 @@ export default function ArticleView({ article }) {
         </div>
 
         <div className="mb-8 flex items-center gap-4 text-sm">
-          <span className="font-medium">{article.author}</span>
-          <span className="text-muted-foreground">{article.date}</span>
+          {article.categories.map((category) => (
+            <Badge key={category} variant="destructive" className="articleCategory w-fit [&:not(:first-child)]:ml-2">
+              {category}
+            </Badge>
+          ))}
+
         </div>
 
-        <p
+        <div className="mb-8 flex items-center gap-4 text-sm">
+          <span id="articleAuthor" className="font-medium">{article.author}</span>
+          <span id="articleDate" className="text-muted-foreground">{article.date}</span>
+        </div>
+
+        <p id="articleDescription"
           className="mb-10 text-lg leading-relaxed text-muted-foreground whitespace-pre-line break-words"
         >
           {article.description}

@@ -17,10 +17,13 @@ export default function ArticleCard({ article }) {
         />
       </div>
 
-      <CardContent className="space-y-3 pt-4 pl-4 pr-4">
-        <Badge variant="destructive" className="w-fit">
-          {article.category}
-        </Badge>
+      <CardContent id="cardContent" className="space-y-3 pt-4 pl-4 pr-4">
+        {article.categories.map((category) => (
+          <Badge key={category} variant="destructive" className="w-fit [&:not(:first-child)]:ml-2">
+            {category}
+          </Badge>
+        ))}
+
 
         <h3 className="text-lg font-bold">{article.title}</h3>
 

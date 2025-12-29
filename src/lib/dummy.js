@@ -7,7 +7,7 @@ export const dummyData = {
         description: "Short description for article one.",
         author: "John Doe",
         date: "2025-01-12",
-        category: "animal",
+        categories: ["animal", "life"],
         image: "https://placehold.co/600x400",
         featured: true
       },
@@ -17,7 +17,7 @@ export const dummyData = {
         description: "Short description for article two.",
         author: "Jane Doe",
         date: "2025-01-13",
-        category: "lifestyle",
+        categories: ["animal", "life"],
         image: "https://placehold.co/600x400",
         featured: true
       },
@@ -27,7 +27,7 @@ export const dummyData = {
         description: "Short description for article three.",
         author: "Mark Smith",
         date: "2025-01-14",
-        category: "tech",
+        categories: ["animal", "life"],
         image: "https://placehold.co/600x400",
         featured: false
       },
@@ -42,7 +42,7 @@ export const dummyData = {
         description: "Short description for article one.",
         author: "John Doe",
         date: "2025-01-12",
-        category: "animal",
+        categories: ["animal", "life"],
         image: "https://placehold.co/600x400",
         featured: true
       },
@@ -52,7 +52,7 @@ export const dummyData = {
         description: "Short description for article two.",
         author: "Jane Doe",
         date: "2025-01-13",
-        category: "lifestyle",
+        categories: ["animal", "life"],
         image: "https://placehold.co/600x400",
         featured: true
       },
