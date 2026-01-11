@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Blog App
 
-## Getting Started
+This is a small Next.js blog with two CMS tools (Sanity and Decap CMS). Switch which CMS the site uses by editing `src/lib/cms.js`.
 
-First, run the development server:
+There are one Javascript file each for the CMS tools. sanity.js and decap.js. They have the code for giving content to frontend.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Install
+
+```sh
+npm install
+# (Optional) Install Playwright browsers for running tests locally
+npx playwright install --with-deps
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Run
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```sh
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Open <http://localhost:3000>
 
-## Learn More
+## Tests
 
-To learn more about Next.js, take a look at the following resources:
+- Tests are in the `tests/` folder.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Run tests
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```sh
+npx playwright test
+```
 
-## Deploy on Vercel
+Application must be running first.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Switching the CMS backend
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Open `src/lib/cms.js`.
+- Change the value of `cmsName` to:
+  - `"sanity"` — uses Sanity (`src/lib/sanity.js`)
+  - `"decap"` — uses Decap CMS (`src/lib/decap.js`)
+
+Example:
+
+```js
+// src/lib/cms.js
+const cmsName = "decap"
+```
+
+## Content location for Decap CMS
+
+- Articles: `public/content/articles/` (examples: `test.md`, `test_featured.md`)
+- Authors: `public/content/authors/`
+- Categories: `public/content/category/`
+- Uploaded images: `public/uploads/`
+
+Sanity content is stored in Sanity backend
+
+## Frontend calls these methods
+
+Both sanity.cms and decap.cms has the same methods with the same names.
+
+- `getAllArticles`
+- `getFeaturedArticles`
+- `getArticle`
+- `search`
